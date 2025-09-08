@@ -1,7 +1,8 @@
 {
   "type": "module",
   "scripts": {
-    "start": "ts-node --esm recentActivity.ts"
+    "build": "tsc",
+    "start": "node dist/recentActivity.js"
   },
   "devDependencies": {
     "ts-node": "^10.9.2",
