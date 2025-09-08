@@ -20,9 +20,4 @@ jobs:
       - name: Run recent activity script
         run: npm run start
       - name: Commit changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add README.md
-          git diff --staged --quiet || git commit -m ":zap: Updates recent activity"
-          git push
+        run: ./scripts/update-readme.sh
