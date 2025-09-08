@@ -11,9 +11,18 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - uses: jamesgeorge007/github-activity-readme@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          COMMIT_MSG: ':zap: Updates recent activity'
-          MAX_LINES: 5
+          node-version: '18'
+      - name: Install dependencies
+        run: npm install
+      - name: Run recent activity script
+        run: npm run start
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add README.md
+          git diff --staged --quiet || git commit -m ":zap: Updates recent activity"
+          git push
