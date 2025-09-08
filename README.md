@@ -1,4 +1,4 @@
-### :zap: Recent Activity
+### Recent Activity
 
 <!--START_SECTION:activity-->
 1. 📝 Issue [#1404](https://github.com/nuxt/test-utils/issues/1404) in [nuxt/test-utils](https://github.com/nuxt/test-utils)
